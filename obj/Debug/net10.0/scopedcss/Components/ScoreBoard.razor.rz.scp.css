@@ -1,0 +1,49 @@
+/* ScoreBoard styles aligned with app theme in wwwroot/app.css */
+.scoreboard[b-x3tv2epcch] {
+  margin: 1rem;
+  display: inline-block;
+  min-width: 12rem;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  color: #222;
+  font-family: inherit;
+}
+
+.scoreboard > div[b-x3tv2epcch] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+.scoreboard strong[b-x3tv2epcch] {
+  color: #1b6ec2; /* match .btn-primary tone */
+}
+
+.scoreboard button[b-x3tv2epcch] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border: 1px solid #1861ac;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.scoreboard button:hover[b-x3tv2epcch] {
+  background-color: #155a9b;
+}
+
+@media (max-width: 520px) {
+  .scoreboard[b-x3tv2epcch] {
+    min-width: 10rem;
+    padding: 0.5rem;
+  }
+  .scoreboard > div[b-x3tv2epcch] {
+    font-size: 0.95rem;
+  }
+}

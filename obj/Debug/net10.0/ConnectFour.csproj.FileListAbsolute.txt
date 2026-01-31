@@ -84,5 +84,5 @@
 /home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/scopedcss/Components/Board.razor.rz.scp.css
 /home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/ConnectFour.sourcelink.json
 /home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/scopedcss/Components/ScoreBoard.razor.rz.scp.css
-/home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/compressed/8t7ubqbmk6-{0}-ir3e0o22p3-ir3e0o22p3.gz
-/home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/compressed/qps0edvuu1-{0}-ir3e0o22p3-ir3e0o22p3.gz
+/home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/compressed/8t7ubqbmk6-{0}-0xabasj93g-0xabasj93g.gz
+/home/kbeck/Documents/Pathways/CSE 325/ConnectFour/ConnectFour/obj/Debug/net10.0/compressed/qps0edvuu1-{0}-0xabasj93g-0xabasj93g.gz
