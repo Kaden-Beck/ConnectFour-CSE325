@@ -1,0 +1,32 @@
+@inject ConnectFour.GameState State;
+
+@implements IDisposable
+
+<h3>SCORE BOARD</h3>
+<div class="scoreboard">
+    <div><strong>Player 1:</strong> @State.Player1Wins</div>
+    <div><strong>Player 2:</strong> @State.Player2Wins</div>
+    <div style="margin-top:8px;"><button @onclick="ResetScores">Reset Scores</button></div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        State.StateChanged += OnStateChanged;
+    }
+
+    private void OnStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    void ResetScores()
+    {
+        State.ResetWins();
+    }
+    // Use disposable to handle the scoreboard state update
+    public void Dispose()
+    {
+        State.StateChanged -= OnStateChanged;
+    }
+}

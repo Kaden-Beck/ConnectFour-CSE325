@@ -49,6 +49,7 @@
 
 </div>
 
+<ScoreBoard />
 
 @code {
     private string[] pieces = new string[42];
@@ -73,7 +74,12 @@
             pieces[turn] = $"player{player} col{col} drop{landingRow}";
         }
         catch (ArgumentException ex) { errorMessage = ex.Message; }
-        winnerMessage = State.CheckForWin() switch
+        var win = State.CheckForWin();
+        if (win == GameState.WinState.Player1_Wins || win == GameState.WinState.Player2_Wins)
+        {
+            State.IncrementWin(win);
+        }
+        winnerMessage = win switch
         {
             GameState.WinState.Player1_Wins => "Player 1 Wins!",
             GameState.WinState.Player2_Wins => "Player 2 Wins!",

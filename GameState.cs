@@ -29,6 +29,17 @@ public class GameState
     /// </summary>
     public int CurrentTurn { get { return TheBoard.Count(x => x != 0); } }
 
+    // Persistent win counters across games (singleton GameState)
+    public int Player1Wins { get; private set; } = 0;
+    public int Player2Wins { get; private set; } = 0;
+    // Event to notify UI when state changes (useful because GameState is registered as a singleton)
+    public event Action? StateChanged;
+
+    private void NotifyStateChanged()
+    {
+        StateChanged?.Invoke();
+    }
+
     public static readonly List<int[]> WinningPlaces = new();
 
     public static void CalculateWinningPlaces()
@@ -150,6 +161,33 @@ public class GameState
     }
 
     /// <summary>
+    /// Increment the persistent win counters for the appropriate player.
+    /// </summary>
+    public void IncrementWin(WinState win)
+    {
+        if (win == WinState.Player1_Wins)
+        {
+            Player1Wins++;
+        }
+        else if (win == WinState.Player2_Wins)
+        {
+            Player2Wins++;
+        }
+        // Force gameboard to update to reflect updated wins
+        NotifyStateChanged();
+    }
+
+    /// <summary>
+    /// Reset the stored win counters to zero.
+    /// </summary>
+    public void ResetWins()
+    {
+        Player1Wins = 0;
+        Player2Wins = 0;
+        NotifyStateChanged();
+    }
+
+    /// <summary>
     /// Takes the current turn and places a piece in the 0-indexed column requested
     /// </summary>
     /// <param name="column">0-indexed column to place the piece into</param>
@@ -182,6 +220,7 @@ public class GameState
     public void ResetBoard()
     {
         TheBoard = new List<int>(new int[42]);
+        NotifyStateChanged();
     }
 
     private byte ConvertLandingSpotToRow(int landingSpot)
